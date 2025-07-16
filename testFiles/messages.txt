@@ -1,0 +1,7 @@
+Sample text refers to placeholder content used to demonstrate or preview design, format, or functionality before the final content is added.
+It is often generic and doesn’t carry any significant meaning.
+One of the most commonly used forms of sample text is Lorem Ipsum, a pseudo-Latin text that has been in use since the 1500s.
+In the context of the English language, sample text can vary.
+It might include common English phrases, alphabets, or even random sentences like:
+“The quick brown fox jumps over the lazy dog.”
+This sentence is particularly famous because it includes all the letters of the English alphabet, making it perfect for font or design testing.
