@@ -3,10 +3,12 @@ package notificator
 import (
 	"context"
 	"errors"
-	"log"
+	"fmt"
+	_ "log"
 	"net/http"
 	"strings"
 	"time"
+	_ "time"
 )
 
 func sendMessage(ctx context.Context, url string, message string) error {
@@ -27,4 +29,17 @@ func sendMessage(ctx context.Context, url string, message string) error {
 		return errors.New(resp.Status)
 	}
 	return nil
+}
+
+func SendMessages(ctx context.Context, url *string, messages chan string) {
+	for idx := 0; idx < 10; idx++ {
+		go func() {
+			ctx, cancel := context.WithTimeout(ctx, 10*time.Second)
+			defer cancel()
+			err := sendMessage(ctx, *url, <-messages)
+			if err != nil {
+				fmt.Print(err.Error())
+			}
+		}()
+	}
 }
