@@ -60,7 +60,7 @@ func readLines(scanner *bufio.Scanner, messages chan string, stop chan bool, sig
 	for scanner.Scan() {
 		select {
 		case <-signalChan:
-			fmt.Println("\nReceived an interrupt, stopping graceful shutdown...")
+			fmt.Println("\nReceived an interrupt, stopping reading...")
 			stop <- true
 			return
 		default:
