@@ -35,7 +35,7 @@ func main() {
 	signalChan := make(chan os.Signal, 1)
 	signal.Notify(signalChan, syscall.SIGINT, syscall.SIGTERM)
 	fmt.Println("starting sending messages on ", *url)
-	messages := make(chan string, 10)
+	messages := make(chan string, notificator.NoNotificators)
 	stopSending := make(chan bool, 1)
 	go readLines(scanner, messages, stopSending, signalChan)
 	for {
